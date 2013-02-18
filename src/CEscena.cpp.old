@@ -1,0 +1,56 @@
+//--------------------------------------------------------------------------------
+//							 	   Void of Mercy          							  
+//				   		        www.voidofmercy.org   
+
+
+//--------------------------------------------------------------------------------
+// Clase: CEscena																	  
+//--------------------------------------------------------------------------------
+// Descripción: Clase para almacenar todos los componentes de la escena a renderizar
+// Autor: Antonio Rodriguez Fernandez "MoebiuZ"      <moebiuz@voidofmercy.org>
+// Fecha: 06/04/2005														
+//--------------------------------------------------------------------------------
+
+#include "include/CEscena.h"
+
+
+CEscena::CEscena()
+{
+	m_pListaMeshes = new CListaEnlazada<CMesh>;    // Lista de Meshes inanimados de la escena
+}
+
+//---------------------------------------------------------------
+// Nombre: Destructor
+// Descripcion: Destructor de la clase
+// Parametros: Ninguno
+//---------------------------------------------------------------
+CEscena::~CEscena()
+{
+	m_pListaMeshes->LiberarTodo();
+}
+
+
+/*
+void CEscena::AddMesh(int nNumeroMeshes)
+{
+	CMesh *mesh;
+	register int i;
+	register int total = m_pListaMeshes->Contar();
+	m_pListaMeshes->Insertar(nNumeroMeshes);
+
+	for (i = 0; i < nNumeroMeshes; i++)
+	{
+		mesh = new CMesh;
+		m_pListaMeshes->Poner(total + i, mesh);
+	}
+}
+*/
+
+
+void CEscena::AddMesh(CMesh *pMesh)
+{
+/*	if ( nNumeroMesh < 0 || nNumeroMesh >= m_pListaMeshes->Contar() )
+		return;
+*/
+	m_pListaMeshes->Anadir(pMesh);
+}

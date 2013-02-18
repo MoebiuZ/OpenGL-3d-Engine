@@ -1,0 +1,40 @@
+//--------------------------------------------------------------------------------
+//  						    Void of Mercy           							  
+//							 www.voidofmercy.org        						  
+
+
+
+//--------------------------------------------------------------------------------
+// Clase: CEscena																	  
+//--------------------------------------------------------------------------------
+// Descripción: Clase para el control de la camara			  
+// Autor: Antonio Rodriguez Fernandez "MoebiuZ"      <moebiuz@voidofmercy.org>
+// Fecha: 06/04/2005														
+//--------------------------------------------------------------------------------
+
+#ifndef _CESCENA_H_
+#define _CESCENA_H_
+
+#include "string.h"
+
+#include "general.h"
+
+#include "CMesh.h"
+
+
+class CEscena
+{
+	public:
+
+		CListaEnlazada<CMesh>			*m_pListaMeshes;
+		unsigned int	m_nNumMeshes;
+
+
+						CEscena					();
+		virtual			~CEscena		    	();
+//		void			AddMesh					(int nNumeroMeshes);
+		void			AddMesh					(CMesh *pMesh);
+
+};
+
+#endif
