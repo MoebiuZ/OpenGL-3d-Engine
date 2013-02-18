@@ -1,4 +1,4 @@
 OpenGL-3d-Engine
 ================
 
-A little experilemtal OpenGL 3D engine
+A little experimental OpenGL 3D engine
